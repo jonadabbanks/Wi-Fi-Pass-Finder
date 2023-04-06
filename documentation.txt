@@ -1,9 +1,5 @@
 This is a  Python script that uses the PyQt5 library to create a GUI application that finds and displays saved Wi-Fi passwords on a Windows machine. The script also includes a button to save the displayed Wi-Fi passwords to a text file, and a button to open a GitHub link.
-
 The Window class creates the main window of the application. The initUI method sets the window title, size, and center position. It also creates a label and two buttons, and applies some CSS styling to them.
-
 The display_wifi_passwords method is called when the "Display Saved Wi-Fi Passwords" button is clicked. It runs a PowerShell command to get the list of saved Wi-Fi profiles and their passwords. The output is displayed in a ScrollableMessageBox widget, which is created in the method. The widget is also styled using CSS.
-
 The save_to_text method is called when the "Save to Text" button in the ScrollableMessageBox widget is clicked. It uses the PyQt5 QFileDialog class to get the file path where the text file will be saved, and then writes the Wi-Fi passwords to the file. A message box is displayed to confirm that the text has been saved.
-
 The center method is called to center the window on the screen, and the open_link method is called when the "Github" button is clicked, which opens a link to the GitHub repository of the application.
