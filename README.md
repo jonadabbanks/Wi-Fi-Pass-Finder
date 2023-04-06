@@ -37,7 +37,7 @@ Wi-Fi Pass Finder has a simple  msi installer
 
 ## License
 
-[APACHE](https://choosealicense.com/licenses/mit/)
+[APACHE](Licence)
 
 
 ## Documentation
