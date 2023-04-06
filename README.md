@@ -48,6 +48,6 @@ Wi-Fi Pass Finder has a simple  msi installer
 
 ## Screenshots
 
-![App Screenshot](Screenshot 2023-04-06 182432.png)
+![App Screenshot](1.png)
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
