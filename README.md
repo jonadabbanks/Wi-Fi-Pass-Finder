@@ -42,7 +42,7 @@ Wi-Fi Pass Finder has a simple  msi installer
 
 ## Documentation
 
-[Documentation](https://linktodocumentation)
+[Documentation](documentation.txt)
 
 
 ## Screenshots
