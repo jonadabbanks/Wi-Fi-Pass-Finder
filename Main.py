@@ -3,6 +3,7 @@ import sys
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import QUrl
 from PyQt5.QtGui import QDesktopServices, QIcon
+from PyQt5.QtWidgets import QTextEdit, QMessageBox
 
 
 class ScrollableMessageBox(QtWidgets.QDialog):
@@ -42,7 +43,7 @@ class Window(QtWidgets.QWidget):
 
     # Create a label to display "Please wait..." message
         self.lbl_wait = QtWidgets.QLabel(self)
-        self.lbl_wait.setGeometry(0, 50, 300, 80)
+        self.lbl_wait.setGeometry(0, 50, 300, 100)
         self.lbl_wait.setAlignment(QtCore.Qt.AlignCenter)
 
         # Create a button to display Wi-Fi passwords
@@ -74,7 +75,7 @@ class Window(QtWidgets.QWidget):
                 color: #FFFFFF;
                 border: none;
                 border-radius: 5px;
-                padding: 7px 4px;
+                padding: 7px 7px;
                 font-size: 13px;
             }
             QPushButton:hover {
@@ -94,11 +95,33 @@ class Window(QtWidgets.QWidget):
         output = subprocess.check_output(cmd, shell=True, text=True)
         self.lbl_wait.setText('Wi-Fi passwords:')
         msg_box = ScrollableMessageBox(output)
-        msg_box.setStyleSheet("background-color: #3E8E41;; color: darkblue;")
+        msg_box.setStyleSheet("background-color: white : darkblue;")
         # Create a "Save to Text" button
         btn_save = QtWidgets.QPushButton('Save to Text', msg_box)
-        btn_save.setGeometry(10, 10, 100, 30)
+      
+
+
+        # Set button style
+        btn_save.setStyleSheet('''
+            QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                font-size: 12px;
+            }
+            
+            QPushButton:hover {
+                background-color: #005DA5;
+            }
+            
+            QPushButton:pressed {
+                background-color: #004884;
+            }
+        ''')
+
+        # Connect button to save_to_text method
         btn_save.clicked.connect(lambda: self.save_to_text(output))
+
 
         # Add the button to the layout
         layout = msg_box.layout()
@@ -109,11 +132,20 @@ class Window(QtWidgets.QWidget):
         msg_box.exec_()
 
 
+    from PyQt5.QtWidgets import QTextEdit, QMessageBox
+
     def save_to_text(self, text):
-            file_path, _ = QtWidgets.QFileDialog.getSaveFileName(self, 'Save to Text', '', 'Text Files (*.txt)')
-            if file_path:
-                with open(file_path, 'w') as f:
-                    f.write(text)
+        file_path, _ = QtWidgets.QFileDialog.getSaveFileName(self, 'Save to Text', '', 'Text Files (*.txt)')
+        if file_path:
+            with open(file_path, 'w') as f:
+                f.write(text)
+            # Display a message box with the saved file's contents
+            with open(file_path, 'r') as f:
+                saved_text = f.read()
+            msg_box = QMessageBox()
+            msg_box.setWindowTitle("Text Saved")
+            msg_box.setText("The following Wi-fi PassWord has been saved to file:\n\n{}".format(saved_text))
+            msg_box.exec_()
 
     def center(self):
         frameGm = self.frameGeometry()
