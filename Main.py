@@ -123,7 +123,7 @@ class Window(QtWidgets.QWidget):
         self.move(frameGm.topLeft())
 
     def open_link(self):
-        url = QUrl("https://www.example.com")
+        url = QUrl("https://github.com/jonadabbanks/Wi-Fi-Pass-Finder")
         QDesktopServices.openUrl(url)
 
 
