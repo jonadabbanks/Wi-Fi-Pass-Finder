@@ -10,7 +10,6 @@ Wi-Fi Pass Finder is a  lightweight software is built with simplicity in mind, a
 ## Features
 
 - View Saved Password
-- Get Nearby wifi details
 - Supported on all Windows Os
 
 
