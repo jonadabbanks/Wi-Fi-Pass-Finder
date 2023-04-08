@@ -1,5 +1,5 @@
 
-![Logo](img_dir/wifi.png)
+![Logo](wifi.png)
 
 
 # Wi-Fi Pass Finder
