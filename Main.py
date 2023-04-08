@@ -59,7 +59,7 @@ class Window(QtWidgets.QWidget):
         btn_display.setGeometry(50, 10, 200, 30)
         btn_display.clicked.connect(self.display_wifi_passwords)
         # Add an icon to the button
-        icon_display = QtGui.QIcon('path/to/icon.png')
+        icon_display = QtGui.QIcon('path/to/icon.png') #not adding any icon yet
         btn_display.setIcon(icon_display)
 
         # Create a button to open Github
