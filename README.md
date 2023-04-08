@@ -1,5 +1,5 @@
 
-![Logo](wifi.png)
+![Logo](Logo.png)
 
 
 # Wi-Fi Pass Finder
@@ -47,6 +47,6 @@ Wi-Fi Pass Finder has a simple  msi installer
 
 ## Screenshots
 
-![App Screenshot](img/1.png)
+![App Screenshot](Img/1.png)
 
-![App Screenshot](img/2.png)
+![App Screenshot](Img/2.png)
