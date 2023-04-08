@@ -149,7 +149,7 @@ class Window(QtWidgets.QWidget):
             with open(file_path, 'r') as f:
                 saved_text = f.read()
             msg_box = QMessageBox()
-            msg_box.setWindowTitle("Text Saved")
+            msg_box.setWindowTitle("Passwords Saved")
             msg_box.setText("The following Wi-fi PassWord has been saved to file:\n\n{}".format(saved_text))
             msg_box.exec_()
 
