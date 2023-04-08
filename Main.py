@@ -3,8 +3,8 @@ import sys
 import os
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import QUrl
-from PyQt5.QtGui import QDesktopServices, QIcon
-from PyQt5.QtWidgets import QTextEdit, QMessageBox
+from PyQt5.QtGui import QDesktopServices
+from PyQt5.QtWidgets import  QMessageBox
 
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -136,10 +136,7 @@ class Window(QtWidgets.QWidget):
         layout = msg_box.layout()
         layout.addWidget(btn_save)
 
-
-        
         msg_box.exec_()
-
 
     from PyQt5.QtWidgets import QTextEdit, QMessageBox
 
