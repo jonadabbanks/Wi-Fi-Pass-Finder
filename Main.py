@@ -6,6 +6,10 @@ from PyQt5.QtCore import QUrl
 from PyQt5.QtGui import QDesktopServices, QIcon
 from PyQt5.QtWidgets import QTextEdit, QMessageBox
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
 
 
 
@@ -64,7 +68,7 @@ class Window(QtWidgets.QWidget):
         btn_github.clicked.connect(self.open_link)
 
         # Add an icon to the button
-        icon_github = QtGui.QIcon("img_dir/github.png")
+        icon_github = QtGui.QIcon(resource_path("github.png"))
         btn_github.setIcon(icon_github)
 
      
@@ -160,13 +164,13 @@ class Window(QtWidgets.QWidget):
         self.move(frameGm.topLeft())
 
     def open_link(self):
-        url = QUrl("img_dir\wifi.png")
+        url = QUrl("https://github.com/jonadabbanks/Wi-Fi-Pass-Finder")
         QDesktopServices.openUrl(url)
 
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = Window()
-    app.setWindowIcon(QtGui.QIcon("img_dir\wifi.png"))
+    app.setWindowIcon(QtGui.QIcon(resource_path("Logo.png")))
     window.show()
     sys.exit(app.exec_())
