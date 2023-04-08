@@ -68,7 +68,7 @@ class Window(QtWidgets.QWidget):
         btn_github.clicked.connect(self.open_link)
 
         # Add an icon to the button
-        icon_github = QtGui.QIcon(resource_path("github.png"))
+        icon_github = QtGui.QIcon(resource_path("img/github.png"))
         btn_github.setIcon(icon_github)
 
      
@@ -168,6 +168,6 @@ class Window(QtWidgets.QWidget):
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = Window()
-    app.setWindowIcon(QtGui.QIcon(resource_path("Logo.png")))
+    app.setWindowIcon(QtGui.QIcon(resource_path("img/Logo.png")))
     window.show()
     sys.exit(app.exec_())
