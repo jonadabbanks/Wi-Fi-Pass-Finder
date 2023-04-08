@@ -168,6 +168,6 @@ class Window(QtWidgets.QWidget):
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = Window()
-    app.setWindowIcon(QtGui.QIcon(resource_path("img/Logo.png")))
+    app.setWindowIcon(QtGui.QIcon(resource_path("Img/Logo.png")))
     window.show()
     sys.exit(app.exec_())
