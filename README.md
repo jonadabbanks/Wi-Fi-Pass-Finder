@@ -17,7 +17,7 @@ Wi-Fi Pass Finder is an open source  lightweight software  built with simplicity
 
 Wi-Fi Pass Finder has a simple  msi installer & Exe File
 
-  [Download Msi Here](https://choosealicense.com/licenses/mit/)
+  [Download Msi Here](https://www.4sync.com/web/directDownload/gkEdgbgu/ugMOBc9H.aad1a773ad093447e71758acc4cd1455)
 
   [Download Exe Here](https://www.4sync.com/web/directDownload/qpZVykHO/ugMOBc9H.e353fb6bbbf4dfef01b6db56ce469118)
 
