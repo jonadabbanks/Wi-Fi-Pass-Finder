@@ -1,11 +1,15 @@
 import subprocess
 import sys
+import os
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import QUrl
 from PyQt5.QtGui import QDesktopServices, QIcon
 from PyQt5.QtWidgets import QTextEdit, QMessageBox
 
 
+
+
+ 
 class ScrollableMessageBox(QtWidgets.QDialog):
     def __init__(self, text):
         super().__init__()
@@ -58,8 +62,9 @@ class Window(QtWidgets.QWidget):
         btn_github = QtWidgets.QPushButton('Github', self)
         btn_github.setGeometry(50, 50, 200, 30)
         btn_github.clicked.connect(self.open_link)
+
         # Add an icon to the button
-        icon_github = QtGui.QIcon("C:\\Users\\Jonadab Emeribe\\Downloads\\github.png")
+        icon_github = QtGui.QIcon("img_dir/github.png")
         btn_github.setIcon(icon_github)
 
      
@@ -155,13 +160,13 @@ class Window(QtWidgets.QWidget):
         self.move(frameGm.topLeft())
 
     def open_link(self):
-        url = QUrl("https://github.com/jonadabbanks/Wi-Fi-Pass-Finder")
+        url = QUrl("img_dir\wifi.png")
         QDesktopServices.openUrl(url)
 
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = Window()
-    app.setWindowIcon(QtGui.QIcon("C:\\Users\\Jonadab Emeribe\\Downloads\\wifi.png"))
+    app.setWindowIcon(QtGui.QIcon("img_dir\wifi.png"))
     window.show()
     sys.exit(app.exec_())
