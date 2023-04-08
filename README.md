@@ -4,7 +4,7 @@
 
 # Wi-Fi Pass Finder
 
-Wi-Fi Pass Finder is a  lightweight software is built with simplicity in mind, allowing you to quickly scan and retrieve all saved wifi passwords on your Windows machine without any hassle. With its user-friendly interface, you can easily navigate through the software and retrieve the passwords with ease.
+Wi-Fi Pass Finder is an open source  lightweight software  built with simplicity in mind, allowing you to quickly scan and retrieve all saved wifi passwords on your Windows machine without any hassle. With its user-friendly interface, you can easily navigate through the software and retrieve the passwords with ease.
 
 
 ## Features
