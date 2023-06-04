@@ -1,5 +1,5 @@
 
-![Logo](Img/Logo.png)
+![Logo](Img/logo.png)
 
 
 # Wi-Fi Pass Finder
@@ -25,9 +25,7 @@ Wi-Fi Pass Finder has a simple  Msi installer & Exe File
     
 ## Tech Stack
 
-**Client:** PyQt5 
-
-**Server:** Python, Powershell
+PyQt5, python, Powershell
 
 
 ## Roadmap
