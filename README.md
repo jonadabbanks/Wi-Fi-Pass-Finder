@@ -47,8 +47,8 @@ PyQt5, python, Powershell
 
 ## Screenshots
 
-![App Screenshot](Img/wifi_pass_scan 3.png)
+![App Screenshot](Img/1.png)
 
-![App Screenshot](Img/wifi_pass_scan 1.png)
+![App Screenshot](Img/2.png)
 
-![App Screenshot](Img/wifi_pass_scan 2.png)
+![App Screenshot](Img/3.png)
