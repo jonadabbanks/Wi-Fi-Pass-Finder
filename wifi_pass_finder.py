@@ -1,24 +1,50 @@
 import subprocess
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QScrollArea, QVBoxLayout, QWidget, QLabel, QMessageBox, QLineEdit
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QScrollArea, QVBoxLayout, QWidget, QLabel, QMessageBox, QLineEdit, QDesktopWidget
 from PyQt5.QtGui import QIcon, QClipboard, QGuiApplication, QFont, QColor
 import sys
 import os
 
 
+# the code below is used for converting this script as a one file exe so that all files are added
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base_path, relative_path)
 
 
+
 class WifiScanner(QMainWindow):
     def __init__(self):
         super().__init__()
 
+
+        # Set the window icon
+        icon = QIcon(resource_path("img/wifi.png"))
+        self.setWindowIcon(icon)
+
         # Create a button to scan Wi-Fi profiles
         self.scan_button = QPushButton("Scan Saved Wi-Fi", self)
         self.scan_button.clicked.connect(self.scan_wifi_profiles)
+        icon = QIcon(resource_path("img/wifi.png"))
+        self.scan_button.setIcon(icon)
+
+          # Set the window size
+        self.resize(300, 200)
+
+        # Center the window on the screen
+        self.center_window()
+
+    def center_window(self):
+        # Get the screen's geometry
+        screen_geometry = QDesktopWidget().screenGeometry()
+
+        # Calculate the center point
+        x = (screen_geometry.width() - self.width()) // 2
+        y = (screen_geometry.height() - self.height()) // 2
+
+        # Move the window to the center
+        self.move(x, y)
 
         # Create a search box for filtering Wi-Fi profiles
         self.search_box = QLineEdit(self)
@@ -40,17 +66,18 @@ class WifiScanner(QMainWindow):
         # Set the main widget as the central widget of the window
         self.setCentralWidget(main_widget)
 
-        self.setWindowTitle("Wi-Fi Scanner")
+        self.setWindowTitle("Wi-Fi Pass Finder")
 
         # Apply stylesheet to customize the appearance
         self.setStyleSheet("""
             QMainWindow {
-                background-color: #F0F0F0;
+                background-color: #d3d3d3;
+                border-radius: 7px;
             }
             QPushButton {
                 background-color: #007BFF;
                 color: #FFFFFF;
-                border-radius: 5px;
+                border-radius: 7px;
                 padding: 8px 16px;
             }
             QPushButton:hover {
@@ -63,10 +90,10 @@ class WifiScanner(QMainWindow):
                 padding: 5px;
             }
             QLabel {
-                color: #333333;
+                color: #007BFF;
             }
             QScrollArea {
-                background-color: #FFFFFF;
+                background-color: #c4c3d0
             }
         """)
 
