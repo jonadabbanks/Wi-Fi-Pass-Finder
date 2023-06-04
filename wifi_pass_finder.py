@@ -175,20 +175,20 @@ class WifiScanWorker(QThread):
 
         # Check if the system has a Wi-Fi card
         try:
-            subprocess.check_output(['netsh', 'wlan', 'show', 'drivers'])
+            subprocess.check_output(['netsh', 'wlan', 'show', 'drivers'], creationflags=subprocess.CREATE_NO_WINDOW)
         except subprocess.CalledProcessError:
             # If no Wi-Fi card is found, return None
             self.finished.emit(None)
             return
 
         # Retrieve all Wi-Fi profiles saved on the computer
-        wifi_profiles_output = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('utf-8').split('\n')
+        wifi_profiles_output = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles'], creationflags=subprocess.CREATE_NO_WINDOW).decode('utf-8').split('\n')
         wifi_profile_names = [line.split(":")[1].strip() for line in wifi_profiles_output if "All User Profile" in line]
 
         # Loop through each Wi-Fi profile and retrieve its password
         for profile_name in wifi_profile_names:
             try:
-                wifi_password_output = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', profile_name, 'key=clear']).decode('utf-8').split('\n')
+                wifi_password_output = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', profile_name, 'key=clear'], creationflags=subprocess.CREATE_NO_WINDOW).decode('utf-8').split('\n')
                 wifi_password = [line.split(":")[1].strip() for line in wifi_password_output if "Key Content" in line]
                 if wifi_password:
                     wifi_password = wifi_password[0]
@@ -201,6 +201,7 @@ class WifiScanWorker(QThread):
                 pass
 
         self.finished.emit(wifi_profiles)
+
 
 
 if __name__ == '__main__':
