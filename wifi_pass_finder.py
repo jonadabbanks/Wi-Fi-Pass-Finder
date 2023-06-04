@@ -6,34 +6,36 @@ import sys
 import os
 
 
-# the code below is used for converting this script as a one file exe so that all files are added
+# Function to get the absolute path to a resource file
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base_path, relative_path)
 
 
-
+# Main class for the Wi-Fi scanner application
 class WifiScanner(QMainWindow):
     def __init__(self):
         super().__init__()
 
-
         # Set the window icon
-        icon = QIcon(resource_path("img/wifi.png"))
+        icon = QIcon(resource_path("img/logo.png"))
         self.setWindowIcon(icon)
 
         # Create a button to scan Wi-Fi profiles
         self.scan_button = QPushButton("Scan Saved Wi-Fi", self)
         self.scan_button.clicked.connect(self.scan_wifi_profiles)
-        icon = QIcon(resource_path("img/wifi.png"))
+        icon = QIcon(resource_path("img/logo.png"))
         self.scan_button.setIcon(icon)
 
-          # Set the window size
+        # Set the window size
         self.resize(600, 400)
 
         # Center the window on the screen
         self.center_window()
+
+        # Set up the user interface elements
+        self.setup_ui()
 
     def center_window(self):
         # Get the screen's geometry
@@ -46,6 +48,7 @@ class WifiScanner(QMainWindow):
         # Move the window to the center
         self.move(x, y)
 
+    def setup_ui(self):
         # Create a search box for filtering Wi-Fi profiles
         self.search_box = QLineEdit(self)
         self.search_box.setPlaceholderText("Search Wi-Fi profiles...")
@@ -116,7 +119,6 @@ class WifiScanner(QMainWindow):
         self.worker.finished.connect(self.on_wifi_scan_finished)
         self.worker.start()
 
-
     def on_wifi_scan_finished(self, wifi_profiles):
         if wifi_profiles is None:
             # If no Wi-Fi card is found, output a message on the screen
@@ -164,6 +166,7 @@ class WifiScanner(QMainWindow):
         QMessageBox.information(self, f"{name} Password Copied", "The password has been copied to clipboard.")
 
 
+# Worker thread class for scanning Wi-Fi profiles
 class WifiScanWorker(QThread):
     finished = pyqtSignal(dict)
 
