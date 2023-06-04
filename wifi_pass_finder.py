@@ -30,7 +30,7 @@ class WifiScanner(QMainWindow):
         self.scan_button.setIcon(icon)
 
           # Set the window size
-        self.resize(300, 200)
+        self.resize(600, 400)
 
         # Center the window on the screen
         self.center_window()
